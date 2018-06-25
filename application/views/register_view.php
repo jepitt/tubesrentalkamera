@@ -62,7 +62,7 @@
 
     <a href="<?php echo base_url('index.php/Login') ?>" class="btn btn-lg btn-secondary btn-success">Kembali</a>
     </form>
- <br><br><br>
+ <!-- <br><br><br>
      <div class="container-fluid">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <nav class="navbar navbar-inverse">
@@ -74,13 +74,13 @@
               <li class="active">
                 <a href="<?php echo site_url();?>/Home"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> 081334358714</a>
               </li>
-              <!-- <li>
+              <li>
                 <a href="<?php echo site_url();?>/About">About</a>
               </li>
               <li>
                 <a href="<?php echo site_url();?>/Contact">Contact</a>
-              </li> -->
-            </ul>
+              </li>
+            </ul> -->
           </div>
         </nav>
       </div>
