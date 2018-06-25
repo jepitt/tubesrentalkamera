@@ -48,6 +48,19 @@
 .navbar-default .navbar-toggle {
     border-color: transparent;
 }
+
+/* foto team */
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.8;
+}
+.person:hover {
+    border-color: #dddddd;
+    opacity: 0.9;
+}
 </style>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -115,12 +128,48 @@
     </a>
 </div>
 
-<br><br><br>
+<!-- Team -->
+
+<div class="container-fluid text-center">
+  <br><br>
+  <h3>THE TEAM</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-3">
+      <p class="text-center"><strong>Muhammad Hafidz Ilham</strong></p><br>
+      <a href="#ket-jepitt" data-toggle="collapse">
+      <img src="<?php echo base_url('assets/images/jepitt.png'); ?>" class="img-circle person" alt="Random Name" width="255" height="255">
+    </a>
+    <div id="ket-jepitt" class="collapse">
+        <p>Muhammad Hafidz Ilham</p>
+        <p>1641720085</p>
+        <p>Absent Number 20</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <p class="text-center"><strong>Muhammad Haidar Hammam</strong></p><br>
+      <a href="#ket-hammam" data-toggle="collapse">
+      <img src="<?php echo base_url('assets/images/hammam.png'); ?>" class="img-circle person" alt="Random Name" width="255" height="255">
+    </a>
+    <div id="ket-hammam" class="collapse">
+        <p>Muhammad Haidar Hammam</p>
+        <p>1641720129</p>
+        <p>Absent Number 21</p>
+      </div>
+    </div>
+  </div>
+  <br><br>
+</div>
+
 <!-- Mesen -->
+<div class="container-fluid text-center" style="background: #2d2d30;">
+  <br><br>
 <div id="price" class="row text-center">
   <div class="col-sm-4">
     <div class="thumbnail">
-      <img src="<?php echo base_url('assets/images/60dsmall.jpg'); ?>" alt="60d" width="400" height="300">
+      <img src="<?php echo base_url('assets/images/60dsmall.jpg'); ?>" alt="60d" width="70%" height="70%">
       <p><strong>Canon EOS 60D</strong></p>
       <p>Rp. 100.000 / 24 jam</p>
       <button class="btn" data-toggle="modal" data-target="#myModal">Sewa</button>
@@ -128,7 +177,7 @@
   </div>
   <div class="col-sm-4">
     <div class="thumbnail">
-      <img src="<?php echo base_url('assets/images/7dsmall.jpg'); ?>" alt="7d" width="360" height="300">
+      <img src="<?php echo base_url('assets/images/7dsmall.jpg'); ?>" alt="7d" width="70%" height="70%">
       <p><strong>Canon EOS 7D</strong></p>
       <p>Rp. 200.000 / 24 jam</p>
       <button class="btn" data-toggle="modal" data-target="#myModal">Sewa</button>
@@ -136,14 +185,15 @@
   </div>
   <div class="col-sm-4">
     <div class="thumbnail">
-      <img src="<?php echo base_url('assets/images/1dsmall.jpg'); ?>" alt="1d" width="360" height="300">
+      <img src="<?php echo base_url('assets/images/1dsmall.jpg'); ?>" alt="1d" width="70%" height="70%">
       <p><strong>Canon EOS 1D Mark II</strong></p>
       <p>Rp. 800.000 / 24 jam</p>
       <button class="btn" data-toggle="modal" data-target="#myModal">Sewa</button>
     </div>
   </div>
 </div>
-
+<br>
+</div>
 <!-- Pop up sewa -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">
@@ -194,8 +244,6 @@
   </div>
 </div>
 
-
-<br><br>
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
