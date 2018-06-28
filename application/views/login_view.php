@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LOGIN</title>
-
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/stylemember.css'); ?>">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -16,22 +22,21 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
- <style type="text/css">
-            #main {
-                background-image: url('car3.jpg');
-                height: 600px;
-                width: 800px;
-            }
-        </style>
   </head>
-  <body bgcolor="black"> 
+  <body data-target=".body">
+  <style>
+    .body{
+    background-color: blue;
+    color: white;
+    }
+  </style> 
     <div class="container-fluid">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <ul class="nav navbar-nav">
              <li>
-                <a href="<?php echo site_url();?>/Home"><span class="glyphicon glyphicon-ca" aria-hidden="true"></span> Rental Kamera</a>
+                <a href="<?php echo site_url();?>/Home"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Rental Kamera</a>
               </li>
               <li class="active">
                 <a href="<?php echo site_url();?>/Home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a>
@@ -68,7 +73,7 @@
       <input type="password" name="password" id="password" class="form-control" placeholder="Password">
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
-    <a href="<?php echo base_url('index.php/Login/register') ?>" class="btn btn-lg btn-success btn-block">Registrasi</a>
+    <a href="<?php echo base_url('index.php/Login/register') ?>" class="btn btn-lg btn-success btn-block">Registration</a>
     </form>
     <br><br><br>
    <!--   <div class="container-fluid">

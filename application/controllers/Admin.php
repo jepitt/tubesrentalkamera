@@ -1,7 +1,7 @@
 <?php
  defined('BASEPATH') OR exit('No direct script access allowed');
  
- class Pegawai extends CI_Controller {
+ class Admin extends CI_Controller {
  
  	public function __construct()
  	{
@@ -16,7 +16,8 @@
  			{
  				if (! $this->acl->is_allowed($current_controller, $data['level']))
  				{
- 					redirect('login/logout','refresh');
+ 					echo '<script>alert("Anda Tidak Memiliki Hak Akses")</script>';
+ 					redirect('pegawai','refresh');
  				}
  			}
  		}else{
@@ -28,7 +29,7 @@
  	{
  		$session_data=$this->session->userdata('logged_in');
  		$data['username']=$session_data['username'];
- 		$this->load->view('home',$data);
+ 		$this->load->view('loginAdmin',$data);
  	}
  
  }

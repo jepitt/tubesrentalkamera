@@ -23,7 +23,7 @@
           <div class="container-fluid">
             <ul class="nav navbar-nav">
                <li>
-                <a href="<?php echo site_url();?>/Home">Rental Kamera</a>
+                 <a href="<?php echo site_url();?>/Home"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Rental Kamera</a>
               </li>
               <li class="active">
                 <a href="<?php echo site_url();?>/Home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a>
@@ -60,7 +60,8 @@
       </select>
       <br><button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
 
-    <a href="<?php echo base_url('index.php/Login') ?>" class="btn btn-lg btn-secondary btn-success">Kembali</a>
+    <a href="<?php echo base_url('index.php/Login/') ?>" class="btn btn-lg btn-success btn-block">Back</a>  
+    <!-- <a href="<?php echo base_url('index.php/Login') ?>" class="btn btn-lg btn-secondary btn-success" type="submit">Back</a> -->
     </form>
  <!-- <br><br><br>
      <div class="container-fluid">
@@ -73,14 +74,14 @@
               </li>
               <li class="active">
                 <a href="<?php echo site_url();?>/Home"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> 081334358714</a>
-              </li>
-              <li>
+              </li> -->
+              <!-- <li>
                 <a href="<?php echo site_url();?>/About">About</a>
               </li>
               <li>
                 <a href="<?php echo site_url();?>/Contact">Contact</a>
-              </li>
-            </ul> -->
+              </li> -->
+            </ul>
           </div>
         </nav>
       </div>

@@ -20,16 +20,16 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#">Rebntal Kamera</a>
+      <a class="navbar-brand" href="#">Rental Kamera</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <li><a class="nav-link" href="<?php echo site_url()?>/pegawai">Staff<span class="sr-only">(current)</span></a></li>
-            <a class="nav-link" href="<?php echo site_url()?>/jabatan">Admin<span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="<?php echo site_url()?>/anak">User<span class="sr-only">(current)</span></a>
+           <!--  <li><a class="nav-link" href="<?php echo site_url()?>/pegawai">Staff<span class="sr-only">(current)</span></a></li> -->
+            <li><a class="nav-link" href="<?php echo site_url()?>/admin">Admin<span class="sr-only">(current)</span></a></li>
+            <a class="nav-link" href="<?php echo site_url()?>/user">User<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -42,7 +42,7 @@
       <div class="jumbotron">
         <h1>Admin</h1>
         <p class="lead">
-        	<?php 
+          <?php 
 echo 'Halo, '.$this->session->userdata('logged_in')['username']; ?>
         </p>
       </div>

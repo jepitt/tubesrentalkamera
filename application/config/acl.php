@@ -64,11 +64,11 @@ $acl = array(
 		'user' => true,
 		'admin' => true,
 	),
-	'jabatan' => array(
+	'admin' => array(
 		'user' => false,
 		'admin' => true,
 	),
-	'anak' => array(
+	'user' => array(
 		'user' => true,
 		'admin' => true,
 	),

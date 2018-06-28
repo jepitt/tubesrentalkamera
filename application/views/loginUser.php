@@ -27,13 +27,13 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <li><a class="nav-link" href="<?php echo site_url()?>/pegawai">Staff<span class="sr-only">(current)</span></a></li>
-            <a class="nav-link" href="<?php echo site_url()?>/jabatan">Admin<span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="<?php echo site_url()?>/anak">User<span class="sr-only">(current)</span></a>
+            <!-- <li><a class="nav-link" href="<?php echo site_url()?>/pegawai">Staff<span class="sr-only">(current)</span></a></li> -->
+            <li><a class="nav-link" href="<?php echo site_url()?>/admin">Admin<span class="sr-only">(current)</span></a></li>
+            <a class="nav-link" href="<?php echo site_url()?>/user">User<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-          <a href="<?php echo base_url('index.php/Login/logout') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Logout</a>
+          <a href="<?php echo base_url('index.php/Login/logout') ?>" class="btn btn-danger my-2 my-sm-0 ml-2">Logout</a>
         </form>
       </div>
     </nav>
@@ -42,7 +42,7 @@
       <div class="jumbotron">
         <h1>User</h1>
         <p class="lead">
-        	<?php 
+          <?php 
 echo 'Halo, '.$this->session->userdata('logged_in')['username']; ?>
         </p>
       </div>
