@@ -74,8 +74,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#home">HOME</a></li>
+        <li><a href="#team">TEAM</a></li>
         <li><a href="#price">PRICELIST</a></li>
-        <li><a href="./../logout.php">LOGOUT</a></li>
+        <li><a href="<?php echo site_url();?>/Login">LOGIN</a></li>
       </ul>
     </div>
   </div>
@@ -129,7 +130,7 @@
 </div>
 
 <!-- Team -->
-
+<div id="team"></div>
 <div class="container-fluid text-center">
   <br><br>
   <h3>THE TEAM</h3>

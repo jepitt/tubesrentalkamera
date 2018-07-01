@@ -36,7 +36,7 @@
     <div class="login-form">
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/cekLogin') ?>">
         <h2 class="text-center">Log in</h2>    
-        <!-- <?php echo validation_errors(); ?> -->
+        
         <div class="form-group">
             <?php echo validation_errors();?>
             <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
