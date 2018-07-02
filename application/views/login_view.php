@@ -35,7 +35,7 @@
   <body style="background-color: #333333;">
     <div class="login-form">
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/cekLogin') ?>">
-        <h2 class="text-center">Log in</h2>    
+        <h2 class="text-center">Sign in</h2>    
         <div class="form-group">
             <?php echo validation_errors();?>
             <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
@@ -46,7 +46,7 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
-        <div class="text-center"> <a href="<?php echo base_url('index.php/Login/register') ?>">Create an Account</a></div> 
+        <div class="text-center"> <a href="<?php echo base_url('index.php/Login/register') ?>">Create an account</a></div> 
     </form>
    
 </div>

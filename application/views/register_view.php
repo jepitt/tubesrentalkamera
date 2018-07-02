@@ -35,7 +35,7 @@
   <body style="background-color: #333333;">
     <div class="login-form">
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/register') ?>">
-        <h2 class="text-center">Register</h2>    
+        <h2 class="text-center">Sign Up</h2>    
         <!-- <?php echo validation_errors(); ?> -->
         <div class="form-group">
             <?php echo validation_errors();?>
@@ -50,7 +50,7 @@
       </select>
       <br><button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
       <br>
-      <div class="text-center"> <a href="<?php echo base_url('index.php/Login/cekLogin') ?>">Back</a></div> 
+      <div class="text-center">Already have account? <a href="<?php echo base_url('index.php/Login/cekLogin') ?>">Log In</a></div> 
     </div>
         
     </form>

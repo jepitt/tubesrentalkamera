@@ -75,7 +75,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#home">HOME</a></li>
         <li><a href="#price">PRICELIST</a></li>
-        <li><a href="./../logout.php">LOGOUT</a></li>
+        <li><a href="<?php echo base_url('index.php/Login') ?>">LOGIN</a></li>
       </ul>
     </div>
   </div>
@@ -172,7 +172,7 @@
       <img src="<?php echo base_url('assets/images/60dsmall.jpg'); ?>" alt="60d" width="70%" height="70%">
       <p><strong>Canon EOS 60D</strong></p>
       <p>Rp. 100.000 / 24 jam</p>
-      <button class="btn" data-toggle="modal" data-target="#myModal">Sewa</button>
+      <button class="btn" onclick="harusLogin()">Sewa</button>
     </div>
   </div>
   <div class="col-sm-4">
@@ -180,7 +180,7 @@
       <img src="<?php echo base_url('assets/images/7dsmall.jpg'); ?>" alt="7d" width="70%" height="70%">
       <p><strong>Canon EOS 7D</strong></p>
       <p>Rp. 200.000 / 24 jam</p>
-      <button class="btn" data-toggle="modal" data-target="#myModal">Sewa</button>
+      <button class="btn" onclick="harusLogin()">Sewa</button>
     </div>
   </div>
   <div class="col-sm-4">
@@ -188,12 +188,19 @@
       <img src="<?php echo base_url('assets/images/1dsmall.jpg'); ?>" alt="1d" width="70%" height="70%">
       <p><strong>Canon EOS 1D Mark II</strong></p>
       <p>Rp. 800.000 / 24 jam</p>
-      <button class="btn" data-toggle="modal" data-target="#myModal">Sewa</button>
+      <button class="btn" onclick="harusLogin()">Sewa</button>
     </div>
   </div>
 </div>
 <br>
 </div>
+
+<script>
+function harusLogin() {
+    alert("Anda harus login terlebih dahulu!");
+}
+</script>
+
 <!-- Pop up sewa -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">
