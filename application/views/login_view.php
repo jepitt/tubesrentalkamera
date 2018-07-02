@@ -32,17 +32,32 @@
     }
 </style>
 </head>
-  <body style="background-color: #333333;">
+  <body background="../../assets/images/1.jpg">
     <div class="login-form">
+<<<<<<< HEAD
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/cekLogin') ?>">
         <h2 class="text-center">Sign in</h2>    
         <div class="form-group">
+=======
+    <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/loginAwal') ?>">
+        <h2 class="text-center">Log in</h2>    
+        <!-- <?php echo validation_errors(); ?> -->
+        <div class="input-group">
+>>>>>>> 4197144d64813f6833d4cb54237d82720268df5c
             <?php echo validation_errors();?>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </span>
             <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
         </div>
-        <div class="form-group">
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
         </div>
+        <br>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>

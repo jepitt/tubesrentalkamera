@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Login Admin</title>
+    <title>Login User</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
     <link href="navbar-top.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body style="background-color: black;">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
       <a class="navbar-brand" href="#">Rental Kamera</a>
@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-           <!--  <li><a class="nav-link" href="<?php echo site_url()?>/pegawai">Staff<span class="sr-only">(current)</span></a></li> -->
+            <!-- <li><a class="nav-link" href="<?php echo site_url()?>/pegawai">Staff<span class="sr-only">(current)</span></a></li> -->
             <li><a class="nav-link" href="<?php echo site_url()?>/admin">Admin<span class="sr-only">(current)</span></a></li>
             <a class="nav-link" href="<?php echo site_url()?>/user">User<span class="sr-only">(current)</span></a>
           </li>
@@ -40,7 +40,7 @@
 
     <main role="main" class="container">
       <div class="jumbotron">
-        <h1>Admin</h1>
+        <h1>User</h1>
         <p class="lead">
           <?php 
 echo 'Halo, '.$this->session->userdata('logged_in')['username']; ?>

@@ -74,8 +74,13 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#home">HOME</a></li>
+        <li><a href="#team">TEAM</a></li>
         <li><a href="#price">PRICELIST</a></li>
+<<<<<<< HEAD:application/views/home_view_logged_in.php
         <li><a href="<?php echo base_url('index.php/Login/logout') ?>">LOGOUT</a></li>
+=======
+        <li><a href="<?php echo site_url();?>/Login">LOGIN</a></li>
+>>>>>>> 4197144d64813f6833d4cb54237d82720268df5c:application/views/home_view.php
       </ul>
     </div>
   </div>
@@ -129,7 +134,7 @@
 </div>
 
 <!-- Team -->
-
+<div id="team"></div>
 <div class="container-fluid text-center">
   <br><br>
   <h3>THE TEAM</h3>
