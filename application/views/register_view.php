@@ -37,25 +37,42 @@
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/register') ?>">
         <h2 class="text-center">Register</h2>    
         <!-- <?php echo validation_errors(); ?> -->
-        <div class="form-group">
+        <div class="input-group">
             <?php echo validation_errors();?>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </span>
             <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
         </div>
-        <div class="form-group">
+        <div class="input-group">
             <?php echo validation_errors();?>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
             <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" autofocus>
         </div>
-        <div class="form-group">
+        <div class="input-group">
             <?php echo validation_errors();?>
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </span>
             <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Full Name" autofocus>
         </div>
-        <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
         </div>
+        <div class="input-group">
+        <span class="input-group-addon">
+              <span class="glyphicon glyphicon-plus"></span>
+            </span>
         <select name="level" id="level" class="form-control" style="height: 45px;">
         <option value="admin">Admin</option>
         <option value="user">User</option>
       </select>
+    </div>
       <br><button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
       <br>
       <div class="text-center"> <a href="<?php echo base_url('index.php/Login/loginAwal') ?>">Back</a></div> 
