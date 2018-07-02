@@ -32,7 +32,7 @@
     }
 </style>
 </head>
-  <body style="background-color: #333333;">
+  <body background="../../assets/images/1.jpg">
     <div class="login-form">
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/register') ?>">
         <h2 class="text-center">Register</h2>    
