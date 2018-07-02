@@ -81,17 +81,6 @@
     </form>
    
 </div>
-      <!-- <?php echo validation_errors(); ?>
-      <label for="username" class="sr-only">Username</label>
-      <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
-      <label for="password" class="sr-only">Password</label>
-      <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      
-          <a href="<?php echo base_url('index.php/Login/register') ?>" class="btn btn-lg btn-success btn-block">Registration</a>
-          </form>
-          <br><br><br>
-          -->
         </div>
       </div>
     </div>
