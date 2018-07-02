@@ -66,7 +66,7 @@
         </div>
         <div class="input-group">
         <span class="input-group-addon">
-              <span class="glyphicon glyphicon-plus"></span>
+              <span class="glyphicon glyphicon-th-list"></span>
             </span>
         <select name="level" id="level" class="form-control" style="height: 45px;">
         <option value="admin">Admin</option>
