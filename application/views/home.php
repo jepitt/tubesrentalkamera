@@ -17,7 +17,7 @@
     <link href="navbar-top.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body style="background-color: black;">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
       <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>Rental Kamera</a>
@@ -57,4 +57,3 @@ echo 'Halo, '.$this->session->userdata('logged_in')['username']; ?>
 
   </body>
 </html>
-

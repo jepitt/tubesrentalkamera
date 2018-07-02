@@ -3,11 +3,12 @@
 	 
 	 class User extends CI_Model
 	 {
-	 	public function login($username,$password)
+	 	public function login($username,/*$email,*/$password)
 	 	{
-	 		$this->db->select('id,username,password,level');
+	 		$this->db->select('id,username,email,password,level');
 	 		$this->db->from('user');
 	 		$this->db->where('username',$username);
+	 		/*$this->db->where('email', $email);*/
 	 		$this->db->where('password', MD5($password));
 	 		$query = $this->db->get();
 	 		if($query->num_rows()==1){
@@ -23,6 +24,8 @@
 	 	{
 	 		$data = array(
 	 			'username' => $this->input->post('username'),
+	 			'fullname' => $this->input->post('fullname'),
+	 			'email' => $this->input->post('email'),
 	 			'password' => md5($this->input->post('password')),
 	 			'level' => $this->input->post('level')
 	 		);

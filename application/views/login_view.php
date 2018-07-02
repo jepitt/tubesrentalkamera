@@ -34,7 +34,7 @@
 </head>
   <body style="background-color: #333333;">
     <div class="login-form">
-    <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/cekLogin') ?>">
+    <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/loginAwal') ?>">
         <h2 class="text-center">Log in</h2>    
         <!-- <?php echo validation_errors(); ?> -->
         <div class="form-group">

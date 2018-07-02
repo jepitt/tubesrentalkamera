@@ -42,6 +42,14 @@
             <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
         </div>
         <div class="form-group">
+            <?php echo validation_errors();?>
+            <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" autofocus>
+        </div>
+        <div class="form-group">
+            <?php echo validation_errors();?>
+            <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Full Name" autofocus>
+        </div>
+        <div class="form-group">
            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
         </div>
         <select name="level" id="level" class="form-control" style="height: 45px;">
@@ -50,7 +58,7 @@
       </select>
       <br><button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
       <br>
-      <div class="text-center"> <a href="<?php echo base_url('index.php/Login/cekLogin') ?>">Back</a></div> 
+      <div class="text-center"> <a href="<?php echo base_url('index.php/Login/loginAwal') ?>">Back</a></div> 
     </div>
         
     </form>
