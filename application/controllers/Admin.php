@@ -17,7 +17,7 @@
  				if (! $this->acl->is_allowed($current_controller, $data['level']))
  				{
  					echo '<script>alert("Anda Tidak Memiliki Hak Akses")</script>';
- 					redirect('pegawai','refresh');
+ 					redirect('home','refresh');
  				}
  			}
  		}else{
@@ -28,7 +28,8 @@
  	public function Index()
  	{
  		$session_data=$this->session->userdata('logged_in');
- 		$data['username']=$session_data['username'];
+ 		$data['username']=	$session_data['username'];
+ 		
  		$this->load->view('loginAdmin',$data);
  	}
  

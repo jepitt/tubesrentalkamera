@@ -65,7 +65,7 @@
  	{
  		$this->session->unset_userdata('logged_in');
  		$this->session->sess_destroy();
- 		redirect('login','refresh');
+ 		redirect('/home/index','refresh');
  	}
  
  }

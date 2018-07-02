@@ -12,7 +12,7 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('home_view_logged_in');
+		$this->load->view('home_view_logged_in_user');
 	}
 	
 }

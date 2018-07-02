@@ -19,7 +19,6 @@
 	 		
 	 	}
 	 
-	 	
 	 	public function insert()
 	 	{
 	 		$data = array(
@@ -30,6 +29,11 @@
 	 			'level' => $this->input->post('level')
 	 		);
 	 		$this->db->insert('user',$data);
+	 	}
+
+	 	public function insert_user($data, $table)
+	 	{
+	 		$this->db->insert($table, $data);
 	 	}
 	 }
 

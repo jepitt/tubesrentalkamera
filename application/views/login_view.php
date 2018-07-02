@@ -32,18 +32,15 @@
     }
 </style>
 </head>
-  <body background="../../assets/images/1.jpg">
+  <body background="<?php echo base_url('assets/images/1.jpg'); ?>">
     <div class="login-form">
-<<<<<<< HEAD
-    <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/cekLogin') ?>">
+
+    <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/loginAwal') ?>">
         <h2 class="text-center">Sign in</h2>    
         <div class="form-group">
-=======
-    <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/loginAwal') ?>">
-        <h2 class="text-center">Log in</h2>    
-        <!-- <?php echo validation_errors(); ?> -->
+
         <div class="input-group">
->>>>>>> 4197144d64813f6833d4cb54237d82720268df5c
+
             <?php echo validation_errors();?>
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-user"></span>
