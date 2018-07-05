@@ -6,6 +6,7 @@
  	public function __construct()
  	{
  		parent::__construct();
+ 		$this->load->model('admin_model');
  		if($this->session->userdata('logged_in')){
  			$session_data = $this->session->userdata('logged_in');
  			$data['username'] = $session_data['username'];
@@ -29,10 +30,28 @@
  	{
  		$session_data=$this->session->userdata('logged_in');
  		$data['username']=	$session_data['username'];
- 		
+ 		$data['list_user'] = $this->admin_model->tampilUser();
  		$this->load->view('loginAdmin',$data);
  	}
  
+ 	public function register()
+ 	{
+ 		$this->load->library('form_validation');
+
+ 		$this->form_validation->set_rules('username','Username','trim|required');
+ 		$this->form_validation->set_rules('fullname','Full Name','trim|required');
+ 		$this->form_validation->set_rules('email', 'E-mail', 'trim|required');
+ 		$this->form_validation->set_rules('password','Password','trim|required');
+ 		$this->form_validation->set_rules('level','Level','trim|required');
+ 		if ($this->form_validation->run() == FALSE) {
+ 			$this->load->view('tambah_user_admin_view');
+ 		} else {
+ 			$this->load->model('user');
+ 			$this->user->insert();
+ 			echo '<script>alert("Data telah disimpan, silahkan login")</script>';
+ 			redirect('admin','refresh');
+ 		}
+ 	}
  }
  
  /* End of file Pegawai.php */

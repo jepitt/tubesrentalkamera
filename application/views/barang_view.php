@@ -111,28 +111,26 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Home</h2>
-  <p>Berikut ini adalah data anggota</p>            
+  <h2>Selamat Datang <?php echo $username; ?> di Halaman Barang</h2>
+  <p>Berikut ini adalah data barang</p>            
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>ID User</th>
-        <th>Username</th>
-        <th>Fullname</th>
-        <th>Email</th>
-        <th>Level</th>
+        <th>ID Barang</th>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Stok</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($list_user as $key => $value) {?>
+      <?php foreach ($list_barang as $key => $value) {?>
               
             <tr>
-              <td><?php echo $value['id'] ?></td>
-              <td><?php echo $value['username'] ?></td>
-              <td><?php echo $value['fullname'] ?></td>
-              <td><?php echo $value['email'] ?></td>
-              <td><?php echo $value['level'] ?></td>
+              <td><?php echo $value['id_barang'] ?></td>
+              <td><?php echo $value['nama_barang'] ?></td>
+              <td><?php echo $value['harga'] ?></td>
+              <td><?php echo $value['stok'] ?></td>
 
               <td>
                 <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -145,7 +143,7 @@ return false;
     </tbody>
   </table>
 
-  <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Member</a>
+  <a href="<?php echo base_url("index.php/barang/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Barang</a>
 
 </div>
 

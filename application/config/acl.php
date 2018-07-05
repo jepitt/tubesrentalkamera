@@ -68,6 +68,14 @@ $acl = array(
 		'user' => false,
 		'admin' => true,
 	),
+	'transaksi' => array(
+		'user' => false,
+		'admin' => true,
+	),
+	'barang' => array(
+		'user' => false,
+		'admin' => true,
+	),
 	'user' => array(
 		'user' => true,
 		'admin' => true,
