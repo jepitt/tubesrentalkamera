@@ -32,11 +32,10 @@
     }
 </style>
 </head>
-  <body background="../../assets/images/1.jpg">
+  <body background="<?php echo base_url('assets/images/1.jpg'); ?>">
     <div class="login-form">
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/register') ?>">
-        <h2 class="text-center">Register</h2>    
-        <!-- <?php echo validation_errors(); ?> -->
+        <h2 class="text-center">Sign Up</h2>    
         <div class="input-group">
             <?php echo validation_errors();?>
             <span class="input-group-addon">
@@ -44,13 +43,15 @@
             </span>
             <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
         </div>
+        <br>
         <div class="input-group">
             <?php echo validation_errors();?>
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-envelope"></span>
             </span>
-            <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" autofocus>
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" autofocus>
         </div>
+        <br>
         <div class="input-group">
             <?php echo validation_errors();?>
             <span class="input-group-addon">
@@ -58,24 +59,26 @@
             </span>
             <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Full Name" autofocus>
         </div>
+        <br>
         <div class="input-group">
           <span class="input-group-addon">
               <span class="glyphicon glyphicon-lock"></span>
             </span>
            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
         </div>
-        <div class="input-group">
+        <br>
+        <div class="input-group" style="display:none;">
         <span class="input-group-addon">
               <span class="glyphicon glyphicon-th-list"></span>
             </span>
-        <select name="level" id="level" class="form-control" style="height: 45px;">
-        <option value="admin">Admin</option>
+        <select  name="level" id="level" class="form-control" style="">
+        <!-- <option value="admin">Admin</option> -->
         <option value="user">User</option>
       </select>
     </div>
       <br><button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
       <br>
-      <div class="text-center"> <a href="<?php echo base_url('index.php/Login/loginAwal') ?>">Back</a></div> 
+      <div class="text-center">Already have account? <a href="<?php echo base_url('index.php/Login') ?>">Log In</a></div> 
     </div>
         
     </form>

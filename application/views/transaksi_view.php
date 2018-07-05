@@ -15,7 +15,6 @@
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
 <style>
   .navbar {
     height: 75px;
@@ -111,30 +110,29 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Home</h2>
-  <p>Berikut ini adalah data anggota</p>            
+  <h2>Selamat Datang <?php echo $username; ?> di Halaman Transaksi</h2>
+  <p>Berikut ini adalah transaksi yang terjadi</p>            
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>ID User</th>
-        <th>Username</th>
-        <th>Fullname</th>
-        <th>Email</th>
-        <th>Level</th>
+        <th>ID Transaksi</th>
+        <th>Tanggal Pinjam</th>
+        <th>Tanggal Kembali</th>
+        <th>Jumlah</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($list_user as $key => $value) {?>
+      <?php foreach ($list_transaksi as $key => $value) {?>
               
             <tr>
-              <td><?php echo $value['id'] ?></td>
-              <td><?php echo $value['username'] ?></td>
-              <td><?php echo $value['fullname'] ?></td>
-              <td><?php echo $value['email'] ?></td>
-              <td><?php echo $value['level'] ?></td>
+              <td><?php echo $value['id_transaksi'] ?></td>
+              <td><?php echo $value['tgl_pinjam'] ?></td>
+              <td><?php echo $value['tgl_kembali'] ?></td>
+              <td><?php echo $value['jumlah'] ?></td>
 
               <td>
+                <a href="<?php echo base_url("index.php/pendidikan/id/".$value['id']) ?>" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-list-alt"></span></a>
                 <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
@@ -145,9 +143,10 @@ return false;
     </tbody>
   </table>
 
-  <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Member</a>
+  <!-- <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Transaksi</a> -->
 
 </div>
+
 
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">

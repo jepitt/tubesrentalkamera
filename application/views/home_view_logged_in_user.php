@@ -25,6 +25,7 @@
     font-size: 11px !important;
     letter-spacing: 4px;
     opacity:0.9;
+    text-transform: uppercase;
 }
 
 /* Add a gray color to all navbar links */
@@ -61,6 +62,11 @@
     border-color: #dddddd;
     opacity: 0.9;
 }
+
+.dropdown-menu{
+  background-color: #3c3c3d;
+}
+
 </style>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -76,7 +82,14 @@
         <li><a href="#home">HOME</a></li>
         <li><a href="#team">TEAM</a></li>
         <li><a href="#price">PRICELIST</a></li>
-        <li><a href="<?php echo site_url();?>/Login">LOGIN</a></li>
+        <li><a href="<?php echo base_url('index.php/admin') ?>">ADMIN</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username ?> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="<?php echo base_url('index.php/Login/logout') ?>">LOGOUT</a></li>
+              <li style="height: 13px; visibility: hidden;">.</li>
+            </ul>
+          </li>
       </ul>
     </div>
   </div>
@@ -195,6 +208,8 @@
 </div>
 <br>
 </div>
+
+
 <!-- Pop up sewa -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">

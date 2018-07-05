@@ -34,6 +34,7 @@
  		} else {
  			$this->load->model('user');
  			$this->user->insert();
+ 			echo '<script>alert("Data telah disimpan, silahkan login")</script>';
  			redirect('Login','refresh');
  		}
  	}
@@ -64,7 +65,7 @@
  	{
  		$this->session->unset_userdata('logged_in');
  		$this->session->sess_destroy();
- 		redirect('login','refresh');
+ 		redirect('/home/index','refresh');
  	}
  
  }

@@ -16,60 +16,12 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<style>
-  .navbar {
-    height: 75px;
-    margin-bottom: 0;
-    padding-right: 100px;
-    padding-left: 100px;
-    background-color: #2d2d30;
-    border: 0;
-    font-size: 11px !important;
-    letter-spacing: 4px;
-    opacity:0.9;
-    text-transform: uppercase;
-}
-
-/* Add a gray color to all navbar links */
-.navbar li a, .navbar .navbar-brand { 
-    color: #d5d5d5 !important;
-    margin-top: 12px;
-}
-
-/* On hover, the links will turn white */
-.navbar-nav li a:hover {
-    color: #fff !important;
-}
-
-/* The active link */
-.navbar-nav li.active a {
-    color: #fff !important;
-    background-color:#29292c !important;
-}
-
-/* Remove border color from the collapsible button */
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-}
-
-/* foto team */
-.person {
-    border: 10px solid transparent;
-    margin-bottom: 25px;
-    width: 80%;
-    height: 80%;
-    opacity: 0.8;
-}
-.person:hover {
-    border-color: #dddddd;
-    opacity: 0.9;
-}
-
-.dropdown-menu{
-  background-color: #3c3c3d;
-}
-
+<style type="text/css">
+  .pull-right{
+    display:block;
+  }
 </style>
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -77,20 +29,14 @@
         <span class="icon-bar"></span>
         
       </button>
-      <a class="navbar-brand" href="#"><img src="<?php echo base_url('assets/images/logofix.png'); ?>"></a>
+      <a class="navbar-brand" href="index.php"><img src="<?php echo base_url('assets/images/logofix.png'); ?>"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo base_url('index.php/admin') ?>">HOME</a></li>
-        <li><a href="<?php echo base_url('index.php/transaksi') ?>">TRANSAKSI</a></li>
+        <!-- <li><a href="<?php echo base_url('index.php/transaksi') ?>">TRANSAKSI</a></li> -->
+        <li><a href="#" onclick="tidakboleh()">TRANSAKSI</a></li>
         <li><a href="<?php echo base_url('index.php/barang') ?>">BARANG</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username ?> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="<?php echo base_url('index.php/Login/logout') ?>">LOGOUT</a></li>
-              <li style="height: 13px; visibility: hidden;">.</li>
-            </ul>
-          </li>
       </ul>
     </div>
   </div>
@@ -106,48 +52,75 @@ return true;
 else
 return false;
 }
+
+function tidakboleh(){
+  alert("Klik tombol back jika ingin kembali ke halaman lain!");
+}
 </script>
 
 <div id="home"></div>
 
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Home</h2>
-  <p>Berikut ini adalah data anggota</p>            
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>ID User</th>
-        <th>Username</th>
-        <th>Fullname</th>
-        <th>Email</th>
-        <th>Level</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($list_user as $key => $value) {?>
-              
-            <tr>
-              <td><?php echo $value['id'] ?></td>
-              <td><?php echo $value['username'] ?></td>
-              <td><?php echo $value['fullname'] ?></td>
-              <td><?php echo $value['email'] ?></td>
-              <td><?php echo $value['level'] ?></td>
-
-              <td>
-                <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-              </td>
-
-
-            </tr>
-            <?php } ?>
-    </tbody>
-  </table>
-
-  <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Member</a>
-
-</div>
+            
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h2><center>Tambah User</center></h2>
+    <br>    
+      <form class="form-signin" method="post" action="<?php echo base_url('index.php/admin/register') ?>">
+        <?php if (validation_errors() == true) {?>
+        <div class="alert alert-danger" role="alert">
+        <center><span class="glyphicon glyphicon-exclamation-sign"></span>Error!</center><hr>
+        <?php echo validation_errors();?>
+        </div>
+        <?php } ?>
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" autofocus>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </span>
+            <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Full Name" autofocus>
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </span>
+           <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+        </div>
+        <br>
+        <div class="input-group">
+        <span class="input-group-addon">
+              <span class="glyphicon glyphicon-th-list"></span>
+            </span>
+        <select  name="level" id="level" class="form-control" style="">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+    </div>
+    <br>
+      <div style="float:left;"><a href="<?php echo base_url("index.php/admin") ?>" class="btn"><span class="glyphicon glyphicon-chevron-left"></span> Back</a></div>
+      <div style="float:right;"><button class="btn pull-right" type="submit"><span class="glyphicon glyphicon-save"></span> Submit</button></div>
+    </div>
+    </form>
+    
+    </div>
+  </div>
 
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
