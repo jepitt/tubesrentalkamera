@@ -15,6 +15,7 @@
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
 <style>
   .navbar {
     height: 75px;
@@ -69,7 +70,7 @@
 }
 
 </style>
-<nav class="navbar navbar-default navbar-fixed-top">
+<!-- <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -84,7 +85,7 @@
         <li><a href="<?php echo base_url('index.php/transaksi') ?>">TRANSAKSI</a></li>
         <li><a href="<?php echo base_url('index.php/barang') ?>">BARANG</a></li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username ?> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username ?> xxx <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="<?php echo base_url('index.php/Login/logout') ?>">LOGOUT</a></li>
               <li style="height: 13px; visibility: hidden;">.</li>
@@ -93,7 +94,7 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 
 <script type="text/javascript">
 function confirm() {
@@ -110,29 +111,30 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Transaksi</h2>
-  <p>Berikut ini adalah transaksi yang terjadi</p>            
+  <!-- <h2>Selamat Datang <?php echo $username; ?> di Halaman Home</h2> -->
+  <p>Berikut ini adalah data anggota</p>            
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>ID Transaksi</th>
-        <th>Tanggal Pinjam</th>
-        <th>Tanggal Kembali</th>
-        <th>Jumlah</th>
+        <th>ID User</th>
+        <th>Username</th>
+        <th>Fullname</th>
+        <th>Email</th>
+        <th>Level</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($list_transaksi as $key => $value) {?>
+      <?php foreach ($list_user as $key => $value) {?>
               
             <tr>
-              <td><?php echo $value['id_transaksi'] ?></td>
-              <td><?php echo $value['tgl_pinjam'] ?></td>
-              <td><?php echo $value['tgl_kembali'] ?></td>
-              <td><?php echo $value['jumlah'] ?></td>
+              <td><?php echo $value['id'] ?></td>
+              <td><?php echo $value['username'] ?></td>
+              <td><?php echo $value['fullname'] ?></td>
+              <td><?php echo $value['email'] ?></td>
+              <td><?php echo $value['level'] ?></td>
 
               <td>
-                <a href="<?php echo base_url("index.php/pendidikan/id/".$value['id']) ?>" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-list-alt"></span></a>
                 <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
@@ -142,19 +144,18 @@ return false;
             <?php } ?>
     </tbody>
   </table>
-   <p align="right"><a href="<?php echo base_url('index.php/ReportTransaksi/cetakTransaksi')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
 
-  <!-- <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Transaksi</a> -->
-
-</div>
-
-
-<footer class="text-center">
+  <!-- <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Member</a>
+   <p align="right"><a href="<?php echo base_url('index.php/Report/createPdf')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
+  
+  </div>
+  
+  <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
   <p>Muhammad Hafidz Ilham | Muhammad Haidar Hammam</p> 
-</footer>
+  </footer> -->
 
 
 <script>

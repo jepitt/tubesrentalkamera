@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Report extends CI_Controller {
+class ReportTransaksi extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,26 +18,21 @@ class Report extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		/*$this->load->view('barang_view');*/
+	
+
+	public function __construct()
+	{	
+			parent::__construct();
+			$this->load->library('pdf');
+			$this->load->model('report_transaksi');
 	}
 
-	public function createPdfBarang()
+	public function cetakTransaksi()
 	{
 		$this->load->library('pdf');
-		$this->pdf->load_view('barang_view');
+		$data['list_transaksi'] = $this->report_transaksi->get_transaksi();
+		$this->load->model('report_transaksi');
+        $this->pdf->load_view('cetakTransaksi', $data);
 	}
 
-	public function buatPdfTransaksi()
-	{
-		$this->load->library('pdf');
-		$this->pdf->load_view('transaksi_view');
-	}
-
-	public function createPdf()
-	{
-		$this->load->library('pdf');
-		$this->pdf->load_view('loginAdmin');
-	}
 }

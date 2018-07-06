@@ -69,7 +69,7 @@
 }
 
 </style>
-<nav class="navbar navbar-default navbar-fixed-top">
+<!-- <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -93,7 +93,7 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 
 <script type="text/javascript">
 function confirm() {
@@ -110,7 +110,7 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Transaksi</h2>
+  <!-- <h2>Selamat Datang <?php echo $username; ?> di Halaman Transaksi</ -->
   <p>Berikut ini adalah transaksi yang terjadi</p>            
   <table class="table table-hover">
     <thead>
@@ -142,19 +142,19 @@ return false;
             <?php } ?>
     </tbody>
   </table>
-   <p align="right"><a href="<?php echo base_url('index.php/ReportTransaksi/cetakTransaksi')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
+   <!-- <p align="right"><a href="<?php echo base_url('index.php/Report/buatPdfTransaksi')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p> -->
 
   <!-- <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Transaksi</a> -->
 
 </div>
 
 
-<footer class="text-center">
+<!-- <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
   <p>Muhammad Hafidz Ilham | Muhammad Haidar Hammam</p> 
-</footer>
+</footer> -->
 
 
 <script>

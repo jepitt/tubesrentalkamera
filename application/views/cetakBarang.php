@@ -15,6 +15,7 @@
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
 <style>
   .navbar {
     height: 75px;
@@ -69,7 +70,7 @@
 }
 
 </style>
-<nav class="navbar navbar-default navbar-fixed-top">
+<!-- <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -93,7 +94,7 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 
 <script type="text/javascript">
 function confirm() {
@@ -110,51 +111,50 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Transaksi</h2>
-  <p>Berikut ini adalah transaksi yang terjadi</p>            
+  <!-- <h2>Selamat Datang <?php echo $username; ?> di Halaman Barang</h2> -->
+  <p>Berikut ini adalah data barang</p>            
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>ID Transaksi</th>
-        <th>Tanggal Pinjam</th>
-        <th>Tanggal Kembali</th>
-        <th>Jumlah</th>
+        <th>ID Barang</th>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Stok</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($list_transaksi as $key => $value) {?>
+      <?php foreach ($list_barang as $key => $value) {?>
               
             <tr>
-              <td><?php echo $value['id_transaksi'] ?></td>
-              <td><?php echo $value['tgl_pinjam'] ?></td>
-              <td><?php echo $value['tgl_kembali'] ?></td>
-              <td><?php echo $value['jumlah'] ?></td>
+              <td><?php echo $value['id_barang'] ?></td>
+              <td><?php echo $value['nama_barang'] ?></td>
+              <td><?php echo $value['harga'] ?></td>
+              <td><?php echo $value['stok'] ?></td>
 
               <td>
-                <a href="<?php echo base_url("index.php/pendidikan/id/".$value['id']) ?>" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-list-alt"></span></a>
                 <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
-
+     
 
             </tr>
             <?php } ?>
     </tbody>
   </table>
-   <p align="right"><a href="<?php echo base_url('index.php/ReportTransaksi/cetakTransaksi')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
 
-  <!-- <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Transaksi</a> -->
+  <a href="<?php echo base_url("index.php/barang/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Barang</a>
+    <!-- <p align="right"><a href="<?php echo base_url('index.php/Report/createPdfBarang')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p> -->
+ 
 
 </div>
 
-
-<footer class="text-center">
+<!-- <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
   <p>Muhammad Hafidz Ilham | Muhammad Haidar Hammam</p> 
-</footer>
+</footer> -->
 
 
 <script>
