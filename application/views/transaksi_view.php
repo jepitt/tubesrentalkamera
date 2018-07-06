@@ -142,7 +142,7 @@ return false;
             <?php } ?>
     </tbody>
   </table>
-   <p align="right"><a href="<?php echo base_url('index.php/Report/buatPdf')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
+   <p align="right"><a href="<?php echo base_url('index.php/Report/buatPdfTransaksi')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
 
   <!-- <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Transaksi</a> -->
 

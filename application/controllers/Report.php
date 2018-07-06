@@ -20,18 +20,24 @@ class Report extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('barang_view');
+		/*$this->load->view('barang_view');*/
 	}
 
-	public function createPdf()
+	public function createPdfBarang()
 	{
 		$this->load->library('pdf');
 		$this->pdf->load_view('barang_view');
 	}
 
-	public function buatPdf()
+	public function buatPdfTransaksi()
 	{
 		$this->load->library('pdf');
 		$this->pdf->load_view('transaksi_view');
+	}
+
+	public function createPdf()
+	{
+		$this->load->library('pdf');
+		$this->pdf->load_view('loginAdmin');
 	}
 }
