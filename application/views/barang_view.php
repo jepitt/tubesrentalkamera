@@ -136,7 +136,7 @@ return false;
                 <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
-
+     
 
             </tr>
             <?php } ?>
@@ -144,6 +144,8 @@ return false;
   </table>
 
   <a href="<?php echo base_url("index.php/barang/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Barang</a>
+    <p align="right"><a href="<?php echo base_url('index.php/Report/createPdf')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
+ 
 
 </div>
 
