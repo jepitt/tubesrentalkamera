@@ -111,7 +111,7 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <!-- <h2>Selamat Datang <?php echo $username; ?> di Halaman Barang</h2> -->
+  <h2>Report Barang</h2>
   <p>Berikut ini adalah data barang</p>            
   <table class="table table-hover">
     <thead>
@@ -120,7 +120,6 @@ return false;
         <th>Nama Barang</th>
         <th>Harga</th>
         <th>Stok</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -131,19 +130,12 @@ return false;
               <td><?php echo $value['nama_barang'] ?></td>
               <td><?php echo $value['harga'] ?></td>
               <td><?php echo $value['stok'] ?></td>
-
-              <td>
-                <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-              </td>
-     
-
             </tr>
             <?php } ?>
     </tbody>
   </table>
 
-  <a href="<?php echo base_url("index.php/barang/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Barang</a>
+  <!-- <a href="<?php echo base_url("index.php/barang/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Barang</a> -->
     <!-- <p align="right"><a href="<?php echo base_url('index.php/Report/createPdfBarang')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p> -->
  
 

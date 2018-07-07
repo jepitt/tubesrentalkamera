@@ -129,7 +129,7 @@ return false;
             <tr>
               <td><?php echo $value['id_barang'] ?></td>
               <td><?php echo $value['nama_barang'] ?></td>
-              <td><?php echo $value['harga'] ?></td>
+              <td>Rp. <?php echo number_format($value['harga']) ?></td>
               <td><?php echo $value['stok'] ?></td>
 
               <td>

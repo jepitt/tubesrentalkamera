@@ -22,6 +22,14 @@ class Barang_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function tampilBarangSewa()
+	{
+		$this->db->select('id_barang, nama_barang, harga, stok');
+		$this->db->where('stok >', '0');
+		$this->db->from('barang');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 }
 
 /* End of file Barang_model.php */

@@ -184,7 +184,7 @@
 <div id="price" class="row text-center">
   <?php
   //Columns must be a factor of 12 (1,2,3,4,6,12)
-  $numOfCols = 3;
+  $numOfCols = 4;
   $rowCount = 0;
   $bootstrapColWidth = 12 / $numOfCols;
   ?>
@@ -194,10 +194,17 @@
     ?>  
         <div class="col-sm-<?php echo $bootstrapColWidth; ?>" >
             <div class="thumbnail">
-                <img src="<?php echo base_url('assets/images/7dsmall.jpg'); ?>" width="60%" height="60%">
-                <p><strong><?php echo $value['nama_barang'] ?></strong></p>
-                <p>Rp. <?php echo $value['harga'] ?> / 24 jam</p>
+                <h3><?php echo $value['nama_barang'] ?></h3>
+                <hr>
+                <p>Rp. <?php echo number_format($value['harga']) ?> / 24 jam</p>
+                <p>Stok <strong><?php echo $value['stok'] ?></strong></p>
+
+                <?php if($value['stok'] == 0) { ?>
+                <a href="<?php echo base_url('index.php/home/sewa'); ?>" class="btn disabled">Sewa</a>
+                <?php } else { ?>
                 <a href="<?php echo base_url('index.php/home/sewa'); ?>" class="btn">Sewa</a>
+                <?php } ?>
+
             </div>
         </div>
   <?php

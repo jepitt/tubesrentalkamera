@@ -111,7 +111,7 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <!-- <h2>Selamat Datang <?php echo $username; ?> di Halaman Home</h2> -->
+  <h2>Report Anggota</h2>
   <p>Berikut ini adalah data anggota</p>            
   <table class="table table-hover">
     <thead>
@@ -121,7 +121,6 @@ return false;
         <th>Fullname</th>
         <th>Email</th>
         <th>Level</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -133,13 +132,6 @@ return false;
               <td><?php echo $value['fullname'] ?></td>
               <td><?php echo $value['email'] ?></td>
               <td><?php echo $value['level'] ?></td>
-
-              <td>
-                <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-              </td>
-
-
             </tr>
             <?php } ?>
     </tbody>

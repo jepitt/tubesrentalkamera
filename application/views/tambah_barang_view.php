@@ -56,7 +56,7 @@ function tidakboleh(){
             
     </div>
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <h2><center>Tambah User</center></h2>
+    <h2><center>Tambah Barang</center></h2>
     <br>    
       <form class="form-signin" method="post" action="<?php echo base_url('index.php/barang/register') ?>">
         <?php if (validation_errors() == true) {?>

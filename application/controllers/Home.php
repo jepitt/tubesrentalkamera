@@ -25,7 +25,7 @@ class Home extends CI_Controller {
 	{
 		$session_data=$this->session->userdata('logged_in');
  		$data['username']=	$session_data['username'];  
- 		$data['list_barang'] = $this->barang_model->tampilBarang();
+ 		$data['list_barang'] = $this->barang_model->tampilBarangSewa();
 		$this->load->view('sewa_view', $data);
 	}
 }
