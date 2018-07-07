@@ -34,6 +34,23 @@ class Barang extends CI_Controller {
 		$this->load->view('barang_view',$data);
 	}
 
+	public function register()
+ 	{
+ 		$this->load->library('form_validation');
+
+ 		$this->form_validation->set_rules('nama','Nama Kamera','trim|required');
+ 		$this->form_validation->set_rules('harga','Harga Kamera','trim|required');
+ 		$this->form_validation->set_rules('stok', 'Stok', 'trim|required');
+ 		if ($this->form_validation->run() == FALSE) {
+ 			$this->load->view('tambah_barang_view');
+ 		} else {
+ 			$this->load->model('barang_model');
+ 			$this->barang_model->insert();
+ 			echo '<script>alert("Data berhasil disimpan")</script>';
+ 			redirect('barang','refresh');
+ 		}
+ 	}
+
 }
 
 /* End of file Barang.php */

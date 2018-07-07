@@ -133,8 +133,8 @@ return false;
               <td><?php echo $value['stok'] ?></td>
 
               <td>
-                <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
      
 

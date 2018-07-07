@@ -7,12 +7,11 @@ class Barang_model extends CI_Model {
 	public function insert()
 	{
 		$data = array(
-			'id_barang' => $this->input->post('id_barang'), 
-			'nama_barang' => $this->input->post('nama_barang'), 
+			'nama_barang' => $this->input->post('nama'), 
 			'harga' => $this->input->post('harga'), 
 			'stok' => $this->input->post('stok')
 		);
-		$this->db->insert('user', $data);
+		$this->db->insert('barang', $data);
 	}
 
 	public function tampilBarang()
@@ -23,6 +22,12 @@ class Barang_model extends CI_Model {
 		return $query->result_array();
 	}
 	
+	public function hitungJumlah()
+	{
+		$this->db->from('barang');
+		$query = $this->db->get();
+		return $query->num_rows(); 
+	}
 
 }
 
