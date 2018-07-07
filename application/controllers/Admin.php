@@ -48,10 +48,11 @@
  		} else {
  			$this->load->model('user');
  			$this->user->insert();
- 			echo '<script>alert("Data telah disimpan, silahkan login")</script>';
+ 			echo '<script>alert("Data berhasil disimpan")</script>';
  			redirect('admin','refresh');
  		}
  	}
+
  }
  
  /* End of file Pegawai.php */

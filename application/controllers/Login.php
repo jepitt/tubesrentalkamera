@@ -34,7 +34,7 @@
  		} else {
  			$this->load->model('user');
  			$this->user->insert();
- 			echo '<script>alert("Data telah disimpan, silahkan login")</script>';
+ 			echo '<script>alert("Data berhasil disimpan, silahkan login")</script>';
  			redirect('Login','refresh');
  		}
  	}

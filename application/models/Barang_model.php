@@ -21,13 +21,6 @@ class Barang_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
-	
-	public function hitungJumlah()
-	{
-		$this->db->from('barang');
-		$query = $this->db->get();
-		return $query->num_rows(); 
-	}
 
 }
 

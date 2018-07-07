@@ -38,10 +38,10 @@
     <form class="form-signin" method="post" action="<?php echo base_url('index.php/Login/loginAwal') ?>">
         <h2 class="text-center">Sign in</h2>    
         <div class="form-group">
-
+        <?php echo validation_errors();?>
         <div class="input-group">
 
-            <?php echo validation_errors();?>
+            
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-user"></span>
             </span>

@@ -165,91 +165,41 @@
 </div>
 
 <!-- Mesen -->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<!-- Mesen -->
 <div class="container-fluid text-center" style="background: #2d2d30;">
   <br><br>
 <div id="price" class="row text-center">
-  <div class="col-sm-4">
-    <div class="thumbnail">
-      <img src="<?php echo base_url('assets/images/60dsmall.jpg'); ?>" alt="60d" width="70%" height="70%">
-      <p><strong>Canon EOS 60D</strong></p>
-      <p>Rp. 100.000 / 24 jam</p>
-      <button class="btn" onclick="harusLogin()">Sewa</button>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="thumbnail">
-      <img src="<?php echo base_url('assets/images/7dsmall.jpg'); ?>" alt="7d" width="70%" height="70%">
-      <p><strong>Canon EOS 7D</strong></p>
-      <p>Rp. 200.000 / 24 jam</p>
-      <button class="btn" onclick="harusLogin()">Sewa</button>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="thumbnail">
-      <img src="<?php echo base_url('assets/images/1dsmall.jpg'); ?>" alt="1d" width="70%" height="70%">
-      <p><strong>Canon EOS 1D Mark II</strong></p>
-      <p>Rp. 800.000 / 24 jam</p>
-      <button class="btn" onclick="harusLogin()">Sewa</button>
-    </div>
-  </div>
+  <?php
+  $numOfCols = 3;
+  $rowCount = 0;
+  $bootstrapColWidth = 12 / $numOfCols;
+  ?>
+  <div class="row">
+    <?php
+    foreach ($list_barang as $key => $value){
+    ?>  
+        <div class="col-sm-<?php echo $bootstrapColWidth; ?>" >
+            <div class="thumbnail">
+                <img src="<?php echo base_url('assets/images/7dsmall.jpg'); ?>" width="60%" height="60%">
+                <p><strong><?php echo $value['nama_barang'] ?></strong></p>
+                <p>Rp. <?php echo $value['harga'] ?> / 24 jam</p>
+                
+                <a href="<?php echo base_url('index.php'); ?>" onclick="harusLogin()" class="btn">Sewa</a>
+            </div>
+        </div>
+  <?php
+    $rowCount++;
+    if($rowCount % $numOfCols == 0) echo '</div><div class="row">';
+  }
+  ?>
+</div>
+</div>
+
 </div>
 <br>
 </div>
 
-<script>
-function harusLogin() {
-    alert("Anda harus login terlebih dahulu!");
-}
-</script>
-
-<!-- Pop up sewa -->
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4>Form Sewa</h4>
-      </div>
-      <div class="modal-body">
-        <form role="form" action="sewa.php" method="post">
-          <div class="form-group">
-            <label><span class="glyphicon glyphicon-user"></span> Nama</label>
-            <input type="text" class="form-control" name="nama">
-          </div>
-          <div class="form-group">
-            <label><span class="glyphicon glyphicon-earphone"></span> Nomor HP</label>
-            <input type="text" class="form-control" name="noHP">
-          </div>
-          <div class="form-group">
-            <label><span class="glyphicon glyphicon-camera"></span> Nama Camera</label>
-              <select name="kamera" class="form-control">
-                <option value="Canon EOS 60D">Canon EOS 60D</option>
-                <option value="Canon EOS 7D">Canon EOS 7D</option>
-                <option value="Canon EOS 1 Mark II">Canon EOS 1 Mark II</option>
-              </select>
-          </div>
-          <div class="form-group">
-            <label><span class="glyphicon glyphicon-calendar"></span> Tanggal Sewa</label>
-            <input type="date" class="form-control" name="tglsewa">
-          </div>
-          <div class="form-group">
-            <label><span class="glyphicon glyphicon-calendar"></span> Tanggal Kembali</label>
-            <input type="date" class="form-control" name="tglkembali">
-          </div>
-          <button type="submit" class="btn btn-block" onclick="alert('Data Anda Berhasil Disimpan!')" name="sewa">Sewa  
-            <span class="glyphicon glyphicon-ok"></span>
-          </button>
-        </form>
-      </div>
-
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-          <span class="glyphicon glyphicon-remove"></span> Cancel
-        </button>
-      </div>
-    </div>
-  </div>
 </div>
 
 <footer class="text-center">
@@ -260,6 +210,10 @@ function harusLogin() {
 </footer>
 
 <script>
+function harusLogin(){
+  alert('Anda harus login terlebih dahulu sebelum menyewa!');
+}
+
 $(document).ready(function(){
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
 

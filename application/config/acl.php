@@ -76,6 +76,10 @@ $acl = array(
 		'user' => false,
 		'admin' => true,
 	),
+	'report' => array(
+		'user' => true,
+		'admin' => true,
+	),
 	'user' => array(
 		'user' => true,
 		'admin' => true,
