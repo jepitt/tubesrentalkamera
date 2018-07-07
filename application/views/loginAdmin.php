@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/styleadmin.css'); ?>">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -81,12 +84,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo base_url('index.php/admin') ?>">HOME</a></li>
+        <li><a href="<?php echo base_url('index.php/admin') ?>">USER</a></li>
         <li><a href="<?php echo base_url('index.php/transaksi') ?>">TRANSAKSI</a></li>
         <li><a href="<?php echo base_url('index.php/barang') ?>">BARANG</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username ?> <span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <li><a href="<?php echo base_url('index.php/home') ?>">BACK TO HOME</a></li>
               <li><a href="<?php echo base_url('index.php/Login/logout') ?>">LOGOUT</a></li>
               <li style="height: 13px; visibility: hidden;">.</li>
             </ul>
@@ -96,24 +100,15 @@
   </div>
 </nav>
 
-<script type="text/javascript">
-function confirm() {
-var msg;
-msg= "Apakah Mang Kemed Yakin Akan Menghapus Data ? " ;
-var agree=confirm(msg);
-if (agree)
-return true;
-else
-return false;
-}
-</script>
+
 
 <div id="home"></div>
 
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Home</h2>
-  <p>Berikut ini adalah data anggota</p>            
-  <table class="table table-hover">
+  <h2>Selamat Datang <?php echo $username; ?> di Halaman User</h2>
+  <p>Berikut ini adalah data anggota</p>   
+  <hr>         
+  <table class="table table-striped table-bordered" id="table_id">
     <thead>
       <tr>
         <th>ID User</th>
@@ -136,17 +131,15 @@ return false;
 
               <td>
                 <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="<?php echo base_url("index.php/admin/delete/".$value['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus user ini?');"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
-
-
             </tr>
             <?php } ?>
     </tbody>
   </table>
-
+  <hr>
   <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Member</a>
-   <p align="right"><a href="<?php echo base_url('index.php/ReportAdmin/cetakAdmin')?>" class="btn btn-primary my-2 my-sm-0 ml-2"> Report</a></p>
+  <a href="<?php echo base_url('index.php/ReportAdmin/cetakAdmin')?>" class="btn pull-right"><span class="glyphicon glyphicon-save"></span> Report</a>
 
 </div>
 
@@ -180,6 +173,10 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 })
+
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
 </script>
 
 <style>
@@ -217,5 +214,12 @@ $(document).ready(function(){
     border-color: transparent;
 }
 </style>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript">
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+    </script>
 </body>
 </html>

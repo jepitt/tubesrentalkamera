@@ -42,7 +42,9 @@ class Barang extends CI_Controller {
  		$this->form_validation->set_rules('harga','Harga Kamera','trim|required');
  		$this->form_validation->set_rules('stok', 'Stok', 'trim|required');
  		if ($this->form_validation->run() == FALSE) {
- 			$this->load->view('tambah_barang_view');
+ 			$session_data=$this->session->userdata('logged_in');
+ 			$data['username']=	$session_data['username'];
+ 			$this->load->view('tambah_barang_view', $data);
  		} else {
  			$this->load->model('barang_model');
  			$this->barang_model->insert();
@@ -50,6 +52,15 @@ class Barang extends CI_Controller {
  			redirect('barang','refresh');
  		}
  	}
+
+ 	public function delete($id)
+	{
+		$this->load->helper("url");
+		$this->load->model("barang_model");
+		$this->barang_model->delete($id);
+
+		redirect('barang');
+	}
 
 }
 

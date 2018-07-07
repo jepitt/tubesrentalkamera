@@ -25,9 +25,18 @@ class Admin_model extends CI_Model {
 	{
 		$this->db->select('id, username, fullname, email, level');
 		$this->db->from('user');
+		$this->db->order_by('id', 'asc');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+
+	public function delete($id) 
+	{ 
+        if ($this->db->delete("user", "id = ".$id)) 
+        { 
+        return true; 
+       	} 
+    }
 }
 
 /* End of file Admin_model.php */

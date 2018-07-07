@@ -17,6 +17,58 @@
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <style type="text/css">
+  .navbar {
+    height: 75px;
+    margin-bottom: 0;
+    padding-right: 100px;
+    padding-left: 100px;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+    text-transform: uppercase;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+    margin-top: 12px;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* foto team */
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.8;
+}
+.person:hover {
+    border-color: #dddddd;
+    opacity: 0.9;
+}
+
+.dropdown-menu{
+  background-color: #3c3c3d;
+}
+
   .pull-right{
     display:block;
   }
@@ -33,10 +85,17 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo base_url('index.php/admin') ?>">HOME</a></li>
-        <!-- <li><a href="<?php echo base_url('index.php/transaksi') ?>">TRANSAKSI</a></li> -->
-        <li><a href="#" onclick="tidakboleh()">TRANSAKSI</a></li>
+        <li><a href="<?php echo base_url('index.php/admin') ?>">USER</a></li>
+        <li><a href="<?php echo base_url('index.php/transaksi') ?>">TRANSAKSI</a></li>
         <li><a href="<?php echo base_url('index.php/barang') ?>">BARANG</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username ?> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="<?php echo base_url('index.php/home') ?>">BACK TO HOME</a></li>
+              <li><a href="<?php echo base_url('index.php/Login/logout') ?>">LOGOUT</a></li>
+              <li style="height: 13px; visibility: hidden;">.</li>
+            </ul>
+          </li>
       </ul>
     </div>
   </div>

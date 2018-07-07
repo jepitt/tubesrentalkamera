@@ -44,7 +44,9 @@
  		$this->form_validation->set_rules('password','Password','trim|required');
  		$this->form_validation->set_rules('level','Level','trim|required');
  		if ($this->form_validation->run() == FALSE) {
- 			$this->load->view('tambah_user_admin_view');
+ 			$session_data=$this->session->userdata('logged_in');
+ 			$data['username']=	$session_data['username'];
+ 			$this->load->view('tambah_user_admin_view', $data);
  		} else {
  			$this->load->model('user');
  			$this->user->insert();
@@ -52,6 +54,15 @@
  			redirect('admin','refresh');
  		}
  	}
+
+ 	public function delete($id)
+	{
+		$this->load->helper("url");
+		$this->load->model("admin_model");
+		$this->admin_model->delete($id);
+
+		redirect('admin');
+	}
 
  }
  

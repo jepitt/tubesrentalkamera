@@ -34,6 +34,15 @@ class Transaksi extends CI_Controller {
 		$data["list_transaksi"] = $this->transaksi_model->tampilTransaksi();
 		$this->load->view('transaksi_view', $data);
 	}
+
+ 	public function delete($id)
+	{
+		$this->load->helper("url");
+		$this->load->model("transaksi_model");
+		$this->transaksi_model->delete($id);
+
+		redirect('transaksi');
+	}
 }
 
 /* End of file Transaksi.php */

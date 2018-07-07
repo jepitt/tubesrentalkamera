@@ -18,6 +18,7 @@ class Barang_model extends CI_Model {
 	{
 		$this->db->select('id_barang, nama_barang, harga, stok');
 		$this->db->from('barang');
+		$this->db->order_by('id_barang', 'asc');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -30,6 +31,14 @@ class Barang_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+
+	public function delete($id) 
+	{ 
+        if ($this->db->delete("barang", "id_barang = ".$id)) 
+        { 
+        return true; 
+       	} 
+    }
 }
 
 /* End of file Barang_model.php */

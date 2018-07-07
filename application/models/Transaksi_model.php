@@ -8,6 +8,7 @@ class Transaksi_model extends CI_Model {
 		$this->db->select('id_transaksi, nama_penyewa, tgl_pinjam, tgl_kembali, jumlah, (jumlah*barang.harga) as harga_sewa');
 		$this->db->from('transaksi');
 		$this->db->join('barang', 'barang.id_barang = transaksi.fk_barang');
+		$this->db->order_by('id_transaksi', 'asc');
 		$query = $this->db->get();
 		return $query->result_array();
 	}	
@@ -23,6 +24,14 @@ class Transaksi_model extends CI_Model {
 		);
 		$this->db->insert('transaksi', $data);
 	}
+
+	public function delete($id) 
+	{ 
+        if ($this->db->delete("transaksi", "id_transaksi = ".$id)) 
+        { 
+        return true; 
+       	} 
+    }
 }
 
 /* End of file Transaksi_model.php */

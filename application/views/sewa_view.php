@@ -147,12 +147,11 @@
             <input type="hidden" value="<?php echo date('Y-m-d'); ?>" name="tgl_pinjam" id="tgl_pinjam" class="form-control" placeholder="Tanggal Pinjam">
         </div>
         <br>
-        <label>Tanggal Kembali</label>
         <div class="input-group">
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar"></span>
             </span>
-            <input type="date" name="tgl_kembali" id="tgl_kembali" class="form-control" placeholder="Tanggal Kembali" autofocus>
+            <input placeholder="Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="tgl_kembali" id="tgl_kembali" class="form-control" placeholder="Tanggal Kembali" autofocus>
         </div>
         <br>
         <div class="input-group">
