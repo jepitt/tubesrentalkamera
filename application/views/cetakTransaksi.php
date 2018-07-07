@@ -110,7 +110,7 @@ return false;
 <div id="home"></div>
 
 <div class="container">
-  <!-- <h2>Selamat Datang <?php echo $username; ?> di Halaman Transaksi</ -->
+  <h2>Report Transaksi</h2>
   <p>Berikut ini adalah transaksi yang terjadi</p>            
   <table class="table table-hover">
     <thead>
@@ -119,7 +119,6 @@ return false;
         <th>Tanggal Pinjam</th>
         <th>Tanggal Kembali</th>
         <th>Jumlah</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -130,14 +129,6 @@ return false;
               <td><?php echo $value['tgl_pinjam'] ?></td>
               <td><?php echo $value['tgl_kembali'] ?></td>
               <td><?php echo $value['jumlah'] ?></td>
-
-              <td>
-                <a href="<?php echo base_url("index.php/pendidikan/id/".$value['id']) ?>" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-list-alt"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-              </td>
-
-
             </tr>
             <?php } ?>
     </tbody>

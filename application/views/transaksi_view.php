@@ -66,6 +66,8 @@
 
 .dropdown-menu{
   background-color: #3c3c3d;
+  }
+
 }
 
 </style>
@@ -116,9 +118,11 @@ return false;
     <thead>
       <tr>
         <th>ID Transaksi</th>
+        <th>Nama Penyewa</th>
         <th>Tanggal Pinjam</th>
         <th>Tanggal Kembali</th>
-        <th>Jumlah</th>
+        <th>Jumlah Sewa</th>
+        <th>Harga Sewa</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -127,14 +131,16 @@ return false;
               
             <tr>
               <td><?php echo $value['id_transaksi'] ?></td>
+              <td><?php echo $value['nama_penyewa'] ?></td>
               <td><?php echo $value['tgl_pinjam'] ?></td>
               <td><?php echo $value['tgl_kembali'] ?></td>
               <td><?php echo $value['jumlah'] ?></td>
+              <td>Rp. <?php echo number_format($value['harga_sewa']) ?></td>
 
               <td>
-                <a href="<?php echo base_url("index.php/pendidikan/id/".$value['id']) ?>" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-list-alt"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/pegawai/delete/".$value['id']) ?>" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+
+                <a href="" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
 
 

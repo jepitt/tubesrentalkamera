@@ -105,34 +105,49 @@
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <h2><center>Form Sewa Kamera</center></h2>
     <br>    
-      <form class="form-signin" method="post" action="<?php echo base_url('index.php/barang/register') ?>">
+      <form class="form-signin" method="post" action="<?php echo base_url('index.php/sewa/pinjam') ?>">
         <?php if (validation_errors() == true) {?>
         <div class="alert alert-danger" role="alert">
         <center><span class="glyphicon glyphicon-exclamation-sign"></span>Error!</center><hr>
         <?php echo validation_errors();?>
         </div>
         <?php } ?>
+
         <div class="input-group">
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-user"></span>
             </span>
-            <select class="form-control" name="nama" id="nama">
-              <option value="0">-- Pilih Kamera --</option>
-                <?php 
-                  foreach ($list_barang as $key => $value){ ?>
-                  <option value="<?php echo $value['nama_barang'] ?>"><?php echo $value['nama_barang'] ?></option>
-                  <!-- echo "<option value='$value[id_barang]'>$value['nama_barang']</option>"; -->
-                <?php } ?>
-            </select>
+            <input type="text" value="<?php echo $username ?>" name="nama" id="nama" class="form-control" placeholder="Nama Penyewa " autofocus>
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">
+              <span class="glyphicon glyphicon-camera"></span>
+            </span>
+            <select class="form-control" name="nama_kamera" id="nama_kamera">
+              <option value="0">-- Pilih Kamera --</option>
+                <?php 
+                  foreach ($list_barang as $key => $value){ 
+                ?>
+                  <option name="nama" id="nama" value="<?php echo $value['id_barang'] ?>"><?php echo $value['nama_barang'] ?></option>
+                  <!-- echo "<option value='$value[id_barang]'>$value['nama_barang']</option>"; -->
+                <?php } ?>
+            </select>
+        </div>
+        <!-- <div class="input-group">
+            <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar"></span>
             </span>
             <input type="date" name="tgl_pinjam" id="tgl_pinjam" class="form-control" placeholder="Tanggal Pinjam" autofocus>
+        </div> -->
+        <div class="input-group">
+            <!-- <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span> -->
+            <input type="hidden" value="<?php echo date('Y-m-d'); ?>" name="tgl_pinjam" id="tgl_pinjam" class="form-control" placeholder="Tanggal Pinjam">
         </div>
         <br>
+        <label>Tanggal Kembali</label>
         <div class="input-group">
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar"></span>
