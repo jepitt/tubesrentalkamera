@@ -13,6 +13,19 @@ class Transaksi_model extends CI_Model {
 		return $query->result_array();
 	}	
 
+	public function getDataTransaksi()
+	{
+		$query = $this->db->get("transaksi");
+		return $query->result_array();
+	}
+
+	public function getTransaksi($id)
+		{
+			$this->db->where('id_transaksi', $id);
+			$query = $this->db->get('transaksi');
+			return $query->result();
+		}
+
 	public function insert()
 	{
 		$data = array(
@@ -24,6 +37,18 @@ class Transaksi_model extends CI_Model {
 		);
 		$this->db->insert('transaksi', $data);
 	}
+
+	public function update($id)
+		{
+			$data = array(
+				'nama_penyewa' => $this->input->post('nama'),
+				'tgl_pinjam' => $this->input->post('tglpinjam'),
+				'tgl_kembali' => $this->input->post('tglkembali'),
+				'jumlah' => $this->input->post('jumlah'),
+			);
+			$this->db->where('id_transaksi', $id);
+			$this->db->update('transaksi', $data);
+		}
 
 	public function delete($id) 
 	{ 

@@ -63,7 +63,13 @@
 
 		redirect('admin');
 	}
-
+	public function update($id)
+	{
+		$session_data=$this->session->userdata('logged_in');
+ 		$data['username']=	$session_data['username'];
+ 		$data['list_user'] = $this->admin_model->tampilUser();
+ 		$this->load->view('editAdmin',$data);
+	}
  }
  
  /* End of file Pegawai.php */

@@ -124,7 +124,7 @@
               <td><?php echo $value['stok'] ?></td>
 
               <td>
-                <a href="" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="<?php echo base_url("index.php/barang/update/".$value['id_barang']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a href="<?php echo base_url("index.php/barang/delete/".$value['id_barang']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus data ini?');"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
      

@@ -6,8 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/styleadmin.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,6 +18,7 @@
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
 <style>
   .navbar {
     height: 75px;
@@ -67,8 +70,6 @@
 
 .dropdown-menu{
   background-color: #3c3c3d;
-  }
-
 }
 
 </style>
@@ -98,54 +99,10 @@
     </div>
   </div>
 </nav>
-
-<div id="home"></div>
-
 <div class="container">
-  <h2>Selamat Datang <?php echo $username; ?> di Halaman Transaksi</h2>
-  <p>Berikut ini adalah transaksi yang terjadi</p>  
-  <hr>          
-  <table class="table table-striped table-bordered" id="table_id">
-    <thead>
-      <tr>
-        <th>ID Transaksi</th>
-        <th>Nama Penyewa</th>
-        <th>Tanggal Pinjam</th>
-        <th>Tanggal Kembali</th>
-        <th>Jumlah Sewa</th>
-        <th>Harga Sewa</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($list_transaksi as $key => $value) {?>
-              
-            <tr>
-              <td><?php echo $value['id_transaksi'] ?></td>
-              <td><?php echo $value['nama_penyewa'] ?></td>
-              <td><?php echo $value['tgl_pinjam'] ?></td>
-              <td><?php echo $value['tgl_kembali'] ?></td>
-              <td><?php echo $value['jumlah'] ?></td>
-              <td>Rp. <?php echo number_format($value['harga_sewa']) ?></td>
-
-              <td>
-
-                <a href="<?php echo base_url("index.php/transaksi/update/".$value['id_transaksi']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="<?php echo base_url("index.php/transaksi/delete/".$value['id_transaksi']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus transaksi ini?');"><span class="glyphicon glyphicon-trash"></span></a>
-              </td>
-
-
-            </tr>
-            <?php } ?>
-    </tbody>
-  </table>
-  <hr>
-  <a href="<?php echo base_url('index.php/ReportTransaksi/cetakTransaksi')?>" class="btn pull-right"><span class="glyphicon glyphicon-save"></span> Report</a>
-
-  <!-- <a href="<?php echo base_url("index.php/admin/register") ?>" class="btn"><span class="glyphicon glyphicon-plus"></span> Tambah Transaksi</a> -->
-
+<h1> Selamat ! </h1><br>
+<h2> Anda Berhasil Mengganti Data Transaksi </h2><br>
 </div>
-
 
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
@@ -177,6 +134,10 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 })
+
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
 </script>
 
 <style>
@@ -214,11 +175,9 @@ $(document).ready(function(){
     border-color: transparent;
 }
 </style>
-
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
-    <script type="text/javascript">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript">
         $(document).ready( function () {
             $('#table_id').DataTable();
         } );

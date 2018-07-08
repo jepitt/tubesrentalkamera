@@ -35,6 +35,32 @@ class Transaksi extends CI_Controller {
 		$this->load->view('transaksi_view', $data);
 	}
 
+	public function update($id)
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+		$this->load->model('transaksi_model');
+
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		/*$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
+		$this->form_validation->set_rules('tanggalLahir', 'Tgl Lahir', 'trim|required');*/
+
+		$session_data=$this->session->userdata('logged_in');
+ 		$data['username']=	$session_data['username'];
+ 		$data['list_transaksi'] = $this->transaksi_model->tampilTransaksi();
+		$data['transaksi'] = $this->transaksi_model->getTransaksi($id);
+
+		if ($this->form_validation->run()==FALSE)
+		{
+			$this->load->view('editTransaksi',$data);
+		}
+		else
+		{
+			$this->transaksi_model->update($id);
+			$this->load->view('editTransaksiData', $data);
+		}
+	}
+
  	public function delete($id)
 	{
 		$this->load->helper("url");

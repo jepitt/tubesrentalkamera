@@ -14,6 +14,13 @@ class Barang_model extends CI_Model {
 		$this->db->insert('barang', $data);
 	}
 
+	public function getDataBarang()
+	{
+		$query = $this->db->get("barang");
+		return $query->result_array();
+	}
+
+
 	public function tampilBarang()
 	{
 		$this->db->select('id_barang, nama_barang, harga, stok');
@@ -31,6 +38,24 @@ class Barang_model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+
+	public function getBarang($id)
+		{
+			$this->db->where('id_barang', $id);
+			$query = $this->db->get('barang');
+			return $query->result();
+		}
+
+	public function updateById($id)
+		{
+			$data = array(
+				'nama_barang' => $this->input->post('nama'),
+				'harga' => $this->input->post('harga'),
+				'stok' => $this->input->post('stok'),
+			);
+			$this->db->where('id_barang', $id);
+			$this->db->update('barang', $data);
+		}
 
 	public function delete($id) 
 	{ 

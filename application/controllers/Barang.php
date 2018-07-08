@@ -53,6 +53,61 @@ class Barang extends CI_Controller {
  		}
  	}
 
+ 	/*public function edit()
+	{
+		$id = $this->uri->segment(3);
+		$data['query'] = $this->barang_model->edit($id);
+		$this->load->view('editBarang', $data);
+	}*/
+
+
+
+	/*function update(){
+	$id_barang = $this->input->post('id');
+	$nama = $this->input->post('nama');
+	$alamat = $this->input->post('alamat');
+	$pekerjaan = $this->input->post('pekerjaan');
+ 
+	$data = array(
+		'nama' => $nama,
+		'alamat' => $alamat,
+		'pekerjaan' => $pekerjaan
+	);
+ 
+	$where = array(
+		'id' => $id
+	);
+ 
+	$this->m_data->update_data($where,$data,'user');
+	redirect('crud/index');
+}*/
+
+ 	public function update($id)
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+		$this->load->model('barang_model');
+
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		/*$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
+		$this->form_validation->set_rules('tanggalLahir', 'Tgl Lahir', 'trim|required');*/
+
+		$session_data=$this->session->userdata('logged_in');
+ 		$data['username']=	$session_data['username'];
+ 		$data['list_barang'] = $this->barang_model->tampilBarang();
+		$data['barang'] = $this->barang_model->getBarang($id);
+
+		if ($this->form_validation->run()==FALSE)
+		{
+			$this->load->view('editBarang',$data);
+		}
+		else
+		{
+			$this->barang_model->updateById($id);
+			$this->load->view('editBarangData', $data);
+		}
+	}
+
  	public function delete($id)
 	{
 		$this->load->helper("url");

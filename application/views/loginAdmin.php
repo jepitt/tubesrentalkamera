@@ -130,7 +130,7 @@
               <td><?php echo $value['level'] ?></td>
 
               <td>
-                <a href="<?php echo base_url("index.php/pegawai/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!-- <a href="<?php echo base_url("index.php/admin/update/".$value['id']) ?>" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span></a> -->
                 <a href="<?php echo base_url("index.php/admin/delete/".$value['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus user ini?');"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
             </tr>

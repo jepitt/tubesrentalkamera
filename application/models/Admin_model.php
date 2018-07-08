@@ -37,6 +37,7 @@ class Admin_model extends CI_Model {
         return true; 
        	} 
     }
+
 }
 
 /* End of file Admin_model.php */
